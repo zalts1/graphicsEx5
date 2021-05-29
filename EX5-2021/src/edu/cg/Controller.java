@@ -12,6 +12,7 @@ import static org.lwjgl.glfw.GLFW.*;
 public class Controller{
     private Window window = null;
     private Viewer viewer = null;
+    // test
 
     private class MouseHandler implements GLFWCursorPosCallbackI {
         Point fromPoint = null;
