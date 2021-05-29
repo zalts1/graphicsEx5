@@ -23,6 +23,7 @@ public final class Specification {
     public static final double WHEEL_RIM_RADIUS = 0.75 * BASE_UNIT;
     public static final double WHEEL_RADIUS = BASE_UNIT;
     public static final double WHEEL_WIDTH = BASE_UNIT;
+    public static final double WHEEL_DEPTH = 1.25 * BASE_UNIT;
 
     // Chimney:
     public static final double CHIMNEY_FIRST_TUBE_HEIGHT = 2 * BASE_UNIT;
@@ -39,5 +40,20 @@ public final class Specification {
     public static final double ROOF_DEPTH = BACK_BODY_DEPTH - 2 * EPS;
     public static final double ROOF_HEIGHT = 0.6 * BASE_UNIT;
     public static final double ROOF_WIDTH = BACK_BODY_WIDTH;
+
+    // Door:
+    public static final double DOOR_HEIGHT = 3.5 * BASE_UNIT;
+    public static final double DOOR_WIDTH = 1.5 * BASE_UNIT;
+    public static final double DOOR_DEPTH = EPS;
+
+    // Window:
+    public static final double WINDOW_HEIGHT = 2 * BASE_UNIT;
+    public static final double WINDOW_WIDTH = 1.5 * BASE_UNIT;
+    public static final double WINDOW_DEPTH = EPS;
+
+    // WINDSHIELD:
+    public static final double WINDSHIELD_HEIGHT = 2 * BASE_UNIT;
+    public static final double WINDSHIELD_WIDTH = 3 * BASE_UNIT;
+    public static final double WINDSHIELD_DEPTH = EPS;
 
 }

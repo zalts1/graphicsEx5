@@ -28,8 +28,15 @@ public class Viewer {
 
     // The Models that the viewer is viewing
     // TODO(0): You can add (sub)-models here to see how they are rendered in their local coordinate system.
-    private final IRenderable[] models = {new Box(0.1f), new Locomotive(), new FrontBody(), new BackBody(), new Chimney(), new Wheel(),
-            new Roof(), new Empty()};
+    private final IRenderable[] models = {
+            new Locomotive(),
+            new Box(0.1),
+            new FrontBody(),
+            new BackBody(),
+            new Chimney(),
+            new Wheel(),
+            new Roof(),
+            new Empty()};
     private int currentModel = 0;
 
 
@@ -126,10 +133,10 @@ public class Viewer {
         canvasHeight = height;
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        double w, h;
-        w = 3;
-        h = 3 * ((double) height / width);
-        glOrtho(-w / 2, w / 2, -h / 2, h / 2, -2.0, 2.0);
+
+        double newBaseUnit = Specification.BASE_UNIT * (double)height / (double)width;
+
+        glFrustum(- Specification.BASE_UNIT, Specification.BASE_UNIT, - newBaseUnit,newBaseUnit, Specification.BASE_UNIT,500);
     }
 
     /**

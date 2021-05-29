@@ -41,29 +41,72 @@ public final class Materials {
 
     public static void setMaterialRoof() {
         // TODO(7): Use this method to define the color of the locomotive roof.
+        glColor3fv(BLACK.toGLColor());
+
+//        glMaterialfv(1028, 4608, WHITE.mult(0.1D).toGLColor());
+//        glMaterialfv(1028, 4609, BLACK.toGLColor());
+//        glMaterialfv(1028, 4610, WHITE.mult(0.7D).toGLColor());
+//        glMaterialfv(1028, 5632, BLACK.toGLColor());
 
     }
 
     public static void setMaterialChassis() {
         // TODO(4): Use this method to define the color of the locomotive chassis.
+//        Vec diffuseCol = new Vec(1.0F, 0.039215688F, 0.0F);
+        glColor3fv(DARK_RED.toGLColor());
+//        glMaterialfv(1028, 4608, diffuseCol.mult(0.2D).toGLColor());
+//        glMaterialfv(1028, 4609, diffuseCol.toGLColor());
+//        glMaterialfv(1028, 4610, WHITE.mult(0.7D).toGLColor());
+//        glMaterialfv(1028, 5632, BLACK.toGLColor());
     }
 
     public static void setMaterialWheelTire() {
         // TODO(3): Use this method to define the color of the wheel tire
+        glColor3fv(DARK_GREY.toGLColor());
+
+//        glMaterialfv(1028, 4608, DARK_GREY.mult(0.2D).toGLColor());
+//        glMaterialfv(1028, 4609, DARK_GREY.toGLColor());
+//        glMaterialfv(1028, 4610, BLACK.toGLColor());
+//        glMaterialfv(1028, 5632, BLACK.toGLColor());
     }
 
     public static void setMaterialWheelRim() {
         // TODO(3): Use this method to define the color of the wheel rim.
+        glColor3fv(GREY.toGLColor());
+
+//        glMaterialfv(1028, 4608, GREY.mult(0.2D).toGLColor());
+//        glMaterialfv(1028, 4609, GREY.toGLColor());
+//        glMaterialfv(1028, 4610, BLACK.toGLColor());
+//        glMaterialfv(1028, 5632, BLACK.toGLColor());
     }
 
     public static void setMaterialLightCase() {
         // TODO(4): See how we used this function to define the color of the car light case.
         glColor4fv(DARK_GREY.toGLColor());
+
+//        glMaterialfv(1028, 4608, DARK_GREY.mult(0.2D).toGLColor());
+//        glMaterialfv(1028, 4609, DARK_GREY.toGLColor());
+//        glMaterialfv(1028, 4610, BLACK.toGLColor());
+//        glMaterialfv(1028, 5632, BLACK.toGLColor());
     }
 
     public static void setMaterialFrontLight() {
         // TODO(4): See how we used this function to define the color of the car light glass.
         float[] col = LIGHT_GREY.toGLColor();
         glColor4fv(col);
+
+//        glMaterialfv(1028, 4608, DARK_GREY.mult(0.2D).toGLColor());
+//        glMaterialfv(1028, 4609, DARK_GREY.toGLColor());
+//        glMaterialfv(1028, 4610, BLACK.toGLColor());
+//        glMaterialfv(1028, 5632, BLACK.toGLColor());
+    }
+
+    public static void setMaterialWindow() {
+        glColor4fv(WHITE.toGLColor());
+    }
+
+    public static void setMaterialDoor() {
+        // TODO(4): See how we used this function to define the color of the car light glass.
+        glColor4fv(DARK_GREY.toGLColor());
     }
 }

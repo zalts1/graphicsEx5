@@ -38,6 +38,11 @@ public class Box implements IRenderable {
 
         // TODO(1): draw the face that lies on the plane X=-rx/2
         // X=-rx/2:
+        glNormal3d(-1, 0, 0);
+        glVertex3d(-rx / 2, -ry / 2, -rz / 2);
+        glVertex3d(-rx / 2, ry / 2, rz / 2);
+        glVertex3d(-rx / 2, ry / 2, rz / 2);
+        glVertex3d(-rx / 2, -ry / 2, -rz / 2);
 
         // X=rx/2:
         glNormal3d(1, 0, 0);
@@ -55,10 +60,19 @@ public class Box implements IRenderable {
 
         // TODO(1): draw the face that lies on the plane Y=ry/2
         // Y=ry/2
+        glNormal3d(0, 1, 0);
+        glVertex3d(rx / 2, ry / 2, rz / 2);
+        glVertex3d(rx / 2, ry / 2, -rz / 2);
+        glVertex3d(-rx / 2, ry / 2, -rz / 2);
+        glVertex3d(-rx / 2, ry / 2, rz / 2);
 
         // TODO(1): draw the face that lies on the plane Z=-rz/2
         // Z=-rz/2:
-
+        glNormal3d(0, 0, -1);
+        glVertex3d(-rx / 2, -ry / 2, -rz / 2);
+        glVertex3d(-rx / 2, ry / 2, -rz / 2);
+        glVertex3d(rx / 2, ry / 2, -rz / 2);
+        glVertex3d(rx / 2, -ry / 2, -rz / 2);
 
         // Z=rz/2:
         glNormal3d(0, 0, 1);
