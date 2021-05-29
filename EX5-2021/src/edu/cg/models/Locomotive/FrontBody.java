@@ -32,27 +32,24 @@ public class FrontBody implements IRenderable {
 
         Materials.setMaterialChassis();
         this.chassis.render();
-        glPushMatrix();
 
         // render wheels
+        glPushMatrix();
         glTranslated(
                 0,
                 -Specification.WHEEL_RADIUS,
                 (Specification.WHEEL_RADIUS / 2));
-
         glPushMatrix();
         glTranslated(
-                (Specification.FRONT_BODY_WIDTH / 2),
+                (Specification.FRONT_BODY_WIDTH / 2) - (Specification.WHEEL_WIDTH / 2),
                 0,
                 0);
-
         this.wheel.render();
         glPopMatrix();
         glTranslated(
-                -(Specification.FRONT_BODY_WIDTH / 2),
+                -(Specification.FRONT_BODY_WIDTH / 2) - (Specification.WHEEL_WIDTH / 2),
                 0,
                 0);
-
         this.wheel.render();
         glPopMatrix();
 

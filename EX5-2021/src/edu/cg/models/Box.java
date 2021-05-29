@@ -40,9 +40,9 @@ public class Box implements IRenderable {
         // X=-rx/2:
         glNormal3d(-1, 0, 0);
         glVertex3d(-rx / 2, -ry / 2, -rz / 2);
+        glVertex3d(-rx / 2, -ry / 2, rz / 2);
         glVertex3d(-rx / 2, ry / 2, rz / 2);
-        glVertex3d(-rx / 2, ry / 2, rz / 2);
-        glVertex3d(-rx / 2, -ry / 2, -rz / 2);
+        glVertex3d(-rx / 2, ry / 2, -rz / 2);
 
         // X=rx/2:
         glNormal3d(1, 0, 0);

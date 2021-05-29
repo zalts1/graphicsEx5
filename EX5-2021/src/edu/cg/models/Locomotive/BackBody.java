@@ -41,15 +41,30 @@ public class BackBody implements IRenderable {
         glPushMatrix();
 
         // render roof
-        glTranslated(
-                0,
-                Specification.BACK_BODY_HEIGHT / 2,
-                -Specification.ROOF_DEPTH / 2);
+        renderRoof();
 
         this.roof.render();
         glPopMatrix();
 
-        // render wheels
+        renderWheels();
+
+        renderWindshield();
+
+        renderLeftSideWindows();
+
+        renderRightSideWindows();
+
+        renderDoor();
+    }
+
+    private void renderRoof() {
+        glTranslated(
+                0,
+                Specification.BACK_BODY_HEIGHT / 2,
+                -Specification.ROOF_DEPTH / 2);
+    }
+
+    private void renderWheels() {
         glTranslated(
                 0,
                 -Specification.BACK_BODY_HEIGHT / 2,
@@ -57,7 +72,7 @@ public class BackBody implements IRenderable {
 
         glPushMatrix();
         glTranslated(
-                Specification.BACK_BODY_WIDTH / 2,
+                (Specification.BACK_BODY_WIDTH / 2) - (Specification.WHEEL_WIDTH / 2),
                 0,
                 0);
 
@@ -65,25 +80,15 @@ public class BackBody implements IRenderable {
         glPopMatrix();
 
         glTranslated(
-                -Specification.BACK_BODY_WIDTH / 2,
+                (-Specification.BACK_BODY_WIDTH / 2) - (Specification.WHEEL_WIDTH / 2),
                 0,
                 0);
 
         this.wheel.render();
         glPopMatrix();
-
-        // render left side
-        renderLeftSideWindows();
-
-        // render right side
-        renderRightSideWindows();
-        renderDoor();
-
-        renderWindshield();
-
     }
 
-    private void renderLeftSideWindows() { glPushMatrix();
+    private void renderLeftSideWindows() {
         Materials.setMaterialWindow();
         glPushMatrix();
         glRotated(90, 0, 1, 0);
@@ -92,10 +97,10 @@ public class BackBody implements IRenderable {
                 Specification.BASE_UNIT * 0.5,
                 Specification.BACK_BODY_WIDTH / 2
         );
-        glPushMatrix();
 
+        glPushMatrix();
         glTranslated(
-                Specification.BASE_UNIT * 0.25,
+                Specification.BASE_UNIT * 2.75,
                 0,
                 0
         );
@@ -104,7 +109,7 @@ public class BackBody implements IRenderable {
 
         glPushMatrix();
         glTranslated(
-                Specification.BASE_UNIT * 2.75,
+                Specification.BASE_UNIT * 0.25,
                 0,
                 0
         );
@@ -119,6 +124,8 @@ public class BackBody implements IRenderable {
         );
         this.window.render();
         glPopMatrix();
+
+        glPopMatrix();
     }
 
     private void renderWindshield() {
@@ -127,7 +134,7 @@ public class BackBody implements IRenderable {
         glPushMatrix();
 
         glTranslated(
-            0,
+                0,
                 Specification.BASE_UNIT * 0.5,
                 Specification.BACK_BODY_DEPTH / 2
         );
@@ -139,8 +146,9 @@ public class BackBody implements IRenderable {
         glTranslated(
                 0,
                 Specification.BACK_BODY_HEIGHT / 8,
-                (-Specification.BACK_BODY_DEPTH / 2) + Specification.EPS
+                -(Specification.BACK_BODY_DEPTH / 2) - Specification.EPS
         );
+
         this.windshield.render();
         glPopMatrix();
     }
@@ -171,17 +179,30 @@ public class BackBody implements IRenderable {
         );
         this.window.render();
         glPopMatrix();
+
+        glPopMatrix();
     }
 
     private void renderDoor() {
         Materials.setMaterialDoor();
+
+        glPushMatrix();
+        glRotated(-90, 0, 1, 0);
+        glTranslated(
+                0,
+                Specification.BASE_UNIT * 0.5,
+                Specification.BACK_BODY_WIDTH / 2
+        );
+
         glPushMatrix();
         glTranslated(
-                (-Specification.BACK_BODY_WIDTH / 2) - Specification.EPS,
+                (Specification.BACK_BODY_WIDTH / 2) - Specification.EPS,
                 -Specification.BASE_UNIT * 0.75,
                 0
         );
         this.door.render();
+        glPopMatrix();
+
         glPopMatrix();
     }
 

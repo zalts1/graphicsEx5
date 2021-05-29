@@ -15,20 +15,19 @@ public class Wheel implements IRenderable {
     public void render() {
         glPushMatrix();
         // TODO(3) : Render the wheel using a Cylinder, and disks that about the cylinder.
-        glRotated(90, 0, 1, 0);
-        glTranslated(0, 0, -(double) Specification.WHEEL_DEPTH / 2);
         Materials.setMaterialWheelTire();
+        glRotated(90, 0, 1, 0);
+        drawRims();
 
         (new Cylinder()).draw(
                 (float) Specification.WHEEL_RADIUS,
                 (float) Specification.WHEEL_RADIUS,
-                (float) Specification.WHEEL_RADIUS,
+                (float) Specification.WHEEL_WIDTH,
                 20,
                 1);
 
-        this.drawRims();
-        glTranslated(0, 0, Specification.WHEEL_DEPTH);
         glRotated(180, 0, 1, 0);
+        glTranslated(0, 0, -Specification.WHEEL_WIDTH);
         this.drawRims();
 
         glPopMatrix();
